@@ -13,6 +13,7 @@
 		5D6D54D8229C0A5E00D15A24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6D54D6229C0A5E00D15A24 /* Main.storyboard */; };
 		5D6D54DA229C0A6000D15A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6D54D9229C0A6000D15A24 /* Assets.xcassets */; };
 		5D6D54DD229C0A6000D15A24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6D54DB229C0A6000D15A24 /* LaunchScreen.storyboard */; };
+		5D6D54EE229C298B00D15A24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D6D54ED229C298B00D15A24 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5D6D54D9229C0A6000D15A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D6D54DC229C0A6000D15A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D6D54DE229C0A6000D15A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D6D54ED229C298B00D15A24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4418C0C29E6F28E2C80AA6A /* Pods-MottramTicket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MottramTicket.release.xcconfig"; path = "Target Support Files/Pods-MottramTicket/Pods-MottramTicket.release.xcconfig"; sourceTree = "<group>"; };
 		D6F66506CC0315094702E491 /* Pods_MottramTicket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MottramTicket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,14 +63,87 @@
 		5D6D54D1229C0A5E00D15A24 /* MottramTicket */ = {
 			isa = PBXGroup;
 			children = (
+				5D6D54EC229C28DC00D15A24 /* Xib */,
+				5D6D54EB229C28AE00D15A24 /* Util */,
+				5D6D54EA229C28A000D15A24 /* Extension */,
+				5D6D54E9229C288F00D15A24 /* Storyboard */,
+				5D6D54E8229C287F00D15A24 /* Entity */,
+				5D6D54E7229C287000D15A24 /* Repository */,
+				5D6D54E6229C286100D15A24 /* View */,
+				5D6D54E5229C285100D15A24 /* Controller */,
+				5D6D54E4229C284200D15A24 /* DataStore */,
 				5D6D54D2229C0A5E00D15A24 /* AppDelegate.swift */,
 				5D6D54D4229C0A5E00D15A24 /* ViewController.swift */,
 				5D6D54D6229C0A5E00D15A24 /* Main.storyboard */,
 				5D6D54D9229C0A6000D15A24 /* Assets.xcassets */,
 				5D6D54DB229C0A6000D15A24 /* LaunchScreen.storyboard */,
+				5D6D54ED229C298B00D15A24 /* GoogleService-Info.plist */,
 				5D6D54DE229C0A6000D15A24 /* Info.plist */,
 			);
 			path = MottramTicket;
+			sourceTree = "<group>";
+		};
+		5D6D54E4229C284200D15A24 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		5D6D54E5229C285100D15A24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5D6D54E6229C286100D15A24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D6D54E7229C287000D15A24 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5D6D54E8229C287F00D15A24 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5D6D54E9229C288F00D15A24 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		5D6D54EA229C28A000D15A24 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5D6D54EB229C28AE00D15A24 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		5D6D54EC229C28DC00D15A24 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		BF082D9CFCC01041DFDE66B6 /* Pods */ = {
@@ -77,7 +152,6 @@
 				0762C8CD50ED16059A6AE01C /* Pods-MottramTicket.debug.xcconfig */,
 				A4418C0C29E6F28E2C80AA6A /* Pods-MottramTicket.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +226,7 @@
 				5D6D54DD229C0A6000D15A24 /* LaunchScreen.storyboard in Resources */,
 				5D6D54DA229C0A6000D15A24 /* Assets.xcassets in Resources */,
 				5D6D54D8229C0A5E00D15A24 /* Main.storyboard in Resources */,
+				5D6D54EE229C298B00D15A24 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
