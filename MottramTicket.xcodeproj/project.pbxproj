@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1930E02DA4CF228D743B3065 /* Pods_MottramTicket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F66506CC0315094702E491 /* Pods_MottramTicket.framework */; };
 		5D6D54D3229C0A5E00D15A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6D54D2229C0A5E00D15A24 /* AppDelegate.swift */; };
 		5D6D54D5229C0A5E00D15A24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6D54D4229C0A5E00D15A24 /* ViewController.swift */; };
 		5D6D54D8229C0A5E00D15A24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6D54D6229C0A5E00D15A24 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0762C8CD50ED16059A6AE01C /* Pods-MottramTicket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MottramTicket.debug.xcconfig"; path = "Target Support Files/Pods-MottramTicket/Pods-MottramTicket.debug.xcconfig"; sourceTree = "<group>"; };
 		5D6D54CF229C0A5E00D15A24 /* MottramTicket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MottramTicket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6D54D2229C0A5E00D15A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D6D54D4229C0A5E00D15A24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		5D6D54D9229C0A6000D15A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D6D54DC229C0A6000D15A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D6D54DE229C0A6000D15A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4418C0C29E6F28E2C80AA6A /* Pods-MottramTicket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MottramTicket.release.xcconfig"; path = "Target Support Files/Pods-MottramTicket/Pods-MottramTicket.release.xcconfig"; sourceTree = "<group>"; };
+		D6F66506CC0315094702E491 /* Pods_MottramTicket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MottramTicket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1930E02DA4CF228D743B3065 /* Pods_MottramTicket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				5D6D54D1229C0A5E00D15A24 /* MottramTicket */,
 				5D6D54D0229C0A5E00D15A24 /* Products */,
+				BF082D9CFCC01041DFDE66B6 /* Pods */,
+				CE36D27F7680B8B6A5FA0B65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,24 @@
 			path = MottramTicket;
 			sourceTree = "<group>";
 		};
+		BF082D9CFCC01041DFDE66B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0762C8CD50ED16059A6AE01C /* Pods-MottramTicket.debug.xcconfig */,
+				A4418C0C29E6F28E2C80AA6A /* Pods-MottramTicket.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE36D27F7680B8B6A5FA0B65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6F66506CC0315094702E491 /* Pods_MottramTicket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D6D54E1229C0A6000D15A24 /* Build configuration list for PBXNativeTarget "MottramTicket" */;
 			buildPhases = (
+				C23D01AD4A030D9D296B45B6 /* [CP] Check Pods Manifest.lock */,
 				5D6D54CB229C0A5E00D15A24 /* Sources */,
 				5D6D54CC229C0A5E00D15A24 /* Frameworks */,
 				5D6D54CD229C0A5E00D15A24 /* Resources */,
+				BCF77C8C2EDB78E0616A1FC2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,79 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BCF77C8C2EDB78E0616A1FC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MottramTicket/Pods-MottramTicket-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PagingKit/PagingKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagingKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MottramTicket/Pods-MottramTicket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C23D01AD4A030D9D296B45B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MottramTicket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D6D54CB229C0A5E00D15A24 /* Sources */ = {
@@ -280,6 +380,7 @@
 		};
 		5D6D54E2229C0A6000D15A24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0762C8CD50ED16059A6AE01C /* Pods-MottramTicket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +399,7 @@
 		};
 		5D6D54E3229C0A6000D15A24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4418C0C29E6F28E2C80AA6A /* Pods-MottramTicket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
