@@ -18,8 +18,11 @@ class BaseController: UITabBarController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() 
         self.delegate = self
+        
+        UITabBar.appearance().tintColor = #colorLiteral(red: 0.9568627451, green: 0.262745098, blue: 0.2117647059, alpha: 1)
+        UITabBar.appearance().unselectedItemTintColor = #colorLiteral(red: 0.7411764706, green: 0.7411764706, blue: 0.7411764706, alpha: 1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,31 +36,31 @@ class BaseController: UITabBarController {
     private func createTabBarControllers() {
         var controllers: [UIViewController] = []
         
-//        let controller1 = createController(storyboardName: "NewOrderListController")
-//        let tabBarItem1 = UITabBarItem(title: "未到着リスト",
-//                                       image: UIImage(named: "home_off"),
-//                                       selectedImage: UIImage(named: "home_on"))
-//        tabBarItem1.imageInsets = tabBarItemInsets
-//        controller1.tabBarItem = tabBarItem1
-//        controllers.append(controller1)
-//
-//        let controller2 = createController(storyboardName: "UndispatchedMenuController")
-//        let tabBarItem2 = UITabBarItem(title: "未発送リスト",
-//                                       image: UIImage(named: "printer_off"),
-//                                       selectedImage: UIImage(named: "printer_on"))
-//        tabBarItem2.imageInsets = tabBarItemInsets
-//        controller2.tabBarItem = tabBarItem2
-//        controllers.append(controller2)
-//
-//        let controller3 = createController(storyboardName: "AsinSearchController")
-//        let tabBarItem3 = UITabBarItem(title: "ASIN 検索&入力",
-//                                       image: UIImage(named: "barcode_off"),
-//                                       selectedImage: UIImage(named: "barcode_on"))
-//        tabBarItem3.imageInsets = tabBarItemInsets
-//        controller3.tabBarItem = tabBarItem3
-//        controllers.append(controller3)
-//
-//        setViewControllers(controllers, animated: false)
+        let controller1 = createController(storyboardName: "HomeController")
+        let tabBarItem1 = UITabBarItem(title: "ホーム",
+                                       image: UIImage(named: "home_off"),
+                                       selectedImage: UIImage(named: "home_on"))
+        tabBarItem1.imageInsets = tabBarItemInsets
+        controller1.tabBarItem = tabBarItem1
+        controllers.append(controller1)
+
+        let controller2 = createController(storyboardName: "CartController")
+        let tabBarItem2 = UITabBarItem(title: "カート",
+                                       image: UIImage(named: "cart_off"),
+                                       selectedImage: UIImage(named: "cart_on"))
+        tabBarItem2.imageInsets = tabBarItemInsets
+        controller2.tabBarItem = tabBarItem2
+        controllers.append(controller2)
+
+        let controller3 = createController(storyboardName: "OrderController")
+        let tabBarItem3 = UITabBarItem(title: "注文",
+                                       image: UIImage(named: "order_off"),
+                                       selectedImage: UIImage(named: "order_on"))
+        tabBarItem3.imageInsets = tabBarItemInsets
+        controller3.tabBarItem = tabBarItem3
+        controllers.append(controller3)
+
+        setViewControllers(controllers, animated: false)
                 //selectedIndex = 1
         selectedIndex = 0
     }
