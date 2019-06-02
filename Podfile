@@ -11,6 +11,7 @@ def install_pod
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'PagingKit'
+  pod 'GoogleSignIn'
 end
 
 target 'MottramTicket' do

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "257073F4BA2566786899CAC306B40330"
+               BlueprintIdentifier = "4967D1EF7A6B7C23F57B2709DF867235"
                BuildableName = "Pods_MottramTicket.framework"
                BlueprintName = "Pods-MottramTicket"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "257073F4BA2566786899CAC306B40330"
+            BlueprintIdentifier = "4967D1EF7A6B7C23F57B2709DF867235"
             BuildableName = "Pods_MottramTicket.framework"
             BlueprintName = "Pods-MottramTicket"
             ReferencedContainer = "container:Pods.xcodeproj">

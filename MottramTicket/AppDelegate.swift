@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
+import RxSwift
 
 enum AppError: Error {
     case noError
@@ -21,10 +23,16 @@ enum AppError: Error {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var disposeBag = DisposeBag()
+    var rootName = "FirstController"
+    
+    var googleAuthInfo = Variable<(withIDToken: String, accessToken: String, email: String)>((withIDToken: "", accessToken: "", email: ""))
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
         return true
     }
 
@@ -50,6 +58,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        if url.scheme == "com.googleusercontent.apps.274607142041-i82k8snb1atr05c236ecpru45n5mi1mv" {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
+        }
+        return true
+    }
+    
+    private func autoLogin() {
+        var locked = true
+        KeyChain.read(keys: ["email", "password"], success: { (dict) in
+            guard let email = dict["email"], let password = dict["password"] else {
+                locked = false
+                self.rootVC(id: "FirstController")
+                return
+            }
+            AuthDataStore.shared.login(email: email, password: password).subscribe(onNext: { (isLogin) in
+                DispatchQueue.main.async {
+                    locked = false
+                    self.rootVC(id: (isLogin) ? "BaseController" : "FirstController")
+                }
+            }, onError: { (error) in
+                locked = false
+                self.rootVC(id: "FirstController")
+            }, onCompleted: nil).disposed(by: self.disposeBag)
+        }) { (error) in
+            locked = false
+            self.rootVC(id: "FirstController")
+        }
+        
+        while(locked) {
+            RunLoop.current.run(mode: .default, before: Date(timeIntervalSinceNow: 1))
+        }
+    }
+    
+    func rootVC(id: String) {
+        self.window?.rootViewController = UIStoryboard(name: id, bundle: nil)
+            .instantiateViewController(withIdentifier: id)
+        self.rootName = id
+    }
+}
 
+extension AppDelegate: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if error != nil { return }
+        
+        let idToken = user.authentication.idToken ?? ""
+        let token = user?.authentication?.accessToken ?? ""
+        let mail = user?.profile.email ?? ""
+        googleAuthInfo.value = (withIDToken: idToken, accessToken: token, email: mail)
+    }
 }
 

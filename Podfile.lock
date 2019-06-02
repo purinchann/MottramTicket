@@ -58,6 +58,18 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
   - GoogleUtilities/AppDelegateSwizzler (5.5.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -113,6 +125,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - GoogleSignIn
   - KeychainAccess
   - Kingfisher
   - PagingKit
@@ -130,6 +143,8 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstanceID
     - GoogleAppMeasurement
+    - GoogleSignIn
+    - GoogleToolboxForMac
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -154,6 +169,8 @@ SPEC CHECKSUMS:
   FirebaseFirestore: ccdaffb8a73c591ff61872b8f7905ad0c237ef50
   FirebaseInstanceID: bd6fc5a258884e206fd5c474ebe4f5b00e21770e
   GoogleAppMeasurement: 6cf307834da065863f9faf4c0de0a936d81dd832
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   "gRPC-C++": e76441995900ac90e9bd98644ab4733f12521edf
   gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
@@ -168,6 +185,6 @@ SPEC CHECKSUMS:
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
 
-PODFILE CHECKSUM: f985f68ef21d09ed0ce0b76b98863482fa00e6de
+PODFILE CHECKSUM: 45eecb19bca58e67931ab738e79c359834155fd7
 
 COCOAPODS: 1.6.1
