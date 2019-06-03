@@ -34,5 +34,17 @@ extension Date {
         let outputString =  formatter.string(from: spanInterval) ?? ""
         return outputString.replacingOccurrences(of: "-", with: "")
     }
+    
+    func isInBusinessHours() -> Bool {
+        
+        let nowStr = self.convertFormat("HH:mm:ss")
+        let start = "11:00:00"
+        let end = "18:00:00"
+        if start <= nowStr && nowStr <= end {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 

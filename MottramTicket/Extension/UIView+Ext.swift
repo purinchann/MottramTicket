@@ -79,6 +79,21 @@ extension UIView {
         }
     }
     
+    @IBInspectable var isShadow: Bool  {
+        get {
+            return false
+        }
+        set {
+            if newValue {
+                layer.masksToBounds = false
+                layer.shadowOpacity = 0.5
+                layer.shadowRadius = 5
+                layer.shadowColor = #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1)
+                layer.shadowOffset = CGSize(width: 5, height: 5)
+            }
+        }
+    }
+    
     var selfCenter: CGPoint {
         return CGPoint(x: bounds.width / 2, y: bounds.height / 2)
     }
