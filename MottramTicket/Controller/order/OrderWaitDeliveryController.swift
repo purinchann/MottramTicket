@@ -76,7 +76,12 @@ extension OrderWaitDeliveryController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let order = orderList.atIndex(indexPath.row),
+            let orderId = order.id,
+            let vc = createController(storyboardName: "OrderQRCodeController") as? OrderQRCodeController else { return }
+        vc.orderId = orderId
+        navigationController?.pushViewController(vc, animated: true)
+
     }
 }
 
