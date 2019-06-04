@@ -18,10 +18,21 @@ class HomeController: UIViewController {
     
     var ad: Ad?
     var shop: Shop?
-    var menuList: [Menu] = [] {
+    
+    var menuList: [Menu] = []
+    
+    var isReloadPair: (isMenus: Bool, isShop: Bool) = (isMenus: false, isShop: false) {
         didSet {
-            collectionView.reloadData()
+            if (self.isReloadPair.isMenus && self.isReloadPair.isShop) {
+                isReloadPair = (isMenus: false, isShop: false)
+                collectionView.reloadData()
+            }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchs()
     }
     
     override func viewDidLoad() {
@@ -29,7 +40,6 @@ class HomeController: UIViewController {
         title = "ホーム"
         setupCollectionView()
         bindUseCase()
-        fetchs()
     }
     
     private func setupCollectionView() {
@@ -57,6 +67,7 @@ class HomeController: UIViewController {
                 return
             }
             self.shop = shop
+            self.isReloadPair.isShop = true
         }.disposed(by: disposeBag)
         
         repository.menuList.asObservable().bind { [weak self] value in
@@ -66,6 +77,7 @@ class HomeController: UIViewController {
                 let shopNumberStr = menu.handlingShopNumber ?? ""
                 return shopNumberStr.contains("4")
             })
+            self.isReloadPair.isMenus = true
         }.disposed(by: disposeBag)
     }
     
