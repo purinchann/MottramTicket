@@ -97,22 +97,39 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quP-V2-y2Y">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="KGl-Jf-W1E">
-                                                            <rect key="frame" x="8" y="0.0" width="334" height="120"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rq0-EO-aRd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ただいまのモッチャム大名店の待ち時間" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yz-4n-t3O">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="120"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="KGl-Jf-W1E">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="90"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ただいまのモッチャム大名店の待ち時間" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yz-4n-t3O">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="159" height="90"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0分" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-Yq-Wfn">
+                                                                            <rect key="frame" x="191" y="0.0" width="159" height="90"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                                            <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 今からモッチャムの店舗に並んだ場合、タピオカを受け取るまでに掛かる時間です。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60k-QR-WJL">
+                                                                    <rect key="frame" x="0.0" y="90" width="350" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="Qll-Bb-D2o"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0分" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-Yq-Wfn">
-                                                                    <rect key="frame" x="183" y="0.0" width="151" height="120"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                                                    <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
@@ -123,11 +140,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Rq0-EO-aRd" secondAttribute="trailing" id="0LT-Yb-7h4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Rq0-EO-aRd" secondAttribute="bottom" id="8tK-lc-Zds"/>
+                                                        <constraint firstItem="Rq0-EO-aRd" firstAttribute="top" secondItem="quP-V2-y2Y" secondAttribute="top" id="Kwi-9d-B6P"/>
                                                         <constraint firstAttribute="height" constant="120" id="WK0-mv-czg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="KGl-Jf-W1E" secondAttribute="bottom" id="aa4-Gh-pUN"/>
-                                                        <constraint firstItem="KGl-Jf-W1E" firstAttribute="top" secondItem="quP-V2-y2Y" secondAttribute="top" id="hlD-xI-UT1"/>
-                                                        <constraint firstItem="KGl-Jf-W1E" firstAttribute="leading" secondItem="quP-V2-y2Y" secondAttribute="leading" constant="8" id="vgk-Wi-2Mh"/>
-                                                        <constraint firstAttribute="trailing" secondItem="KGl-Jf-W1E" secondAttribute="trailing" constant="8" id="wEK-uA-8uY"/>
+                                                        <constraint firstItem="Rq0-EO-aRd" firstAttribute="leading" secondItem="quP-V2-y2Y" secondAttribute="leading" id="wVW-1Q-FGu"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

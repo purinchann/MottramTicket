@@ -11,17 +11,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UJL-2u-LCF" customClass="CartTableCell" customModule="MottramTicket" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pOS-bY-1dg" customClass="OrderTableCell" customModule="MottramTicket" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UJL-2u-LCF" id="Trg-qR-Rdo">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pOS-bY-1dg" id="Idh-DQ-Zfx">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5oD-CS-4fh">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sex-TQ-grd">
                         <rect key="frame" x="16" y="0.0" width="382" height="43.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdF-0n-jfP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHk-7A-ghZ">
                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="43.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -30,7 +30,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egb-B9-GNL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eE-lq-61g">
                                 <rect key="frame" x="99.5" y="0.0" width="83.5" height="43.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,7 +39,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqQ-wk-40x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGP-5U-SwP">
                                 <rect key="frame" x="199" y="0.0" width="83.5" height="43.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,7 +48,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acg-ge-msx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9A-XT-bwd">
                                 <rect key="frame" x="298.5" y="0.0" width="83.5" height="43.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,17 +61,17 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="5oD-CS-4fh" secondAttribute="bottom" id="FUg-Gg-bZg"/>
-                    <constraint firstItem="5oD-CS-4fh" firstAttribute="leading" secondItem="Trg-qR-Rdo" secondAttribute="leading" constant="16" id="dSV-QL-TUC"/>
-                    <constraint firstItem="5oD-CS-4fh" firstAttribute="top" secondItem="Trg-qR-Rdo" secondAttribute="top" id="kuu-FH-J0N"/>
-                    <constraint firstAttribute="trailing" secondItem="5oD-CS-4fh" secondAttribute="trailing" constant="16" id="xpg-GW-qqB"/>
+                    <constraint firstItem="sex-TQ-grd" firstAttribute="top" secondItem="Idh-DQ-Zfx" secondAttribute="top" id="5Ll-lq-qGN"/>
+                    <constraint firstItem="sex-TQ-grd" firstAttribute="leading" secondItem="Idh-DQ-Zfx" secondAttribute="leading" constant="16" id="SEg-Q5-O81"/>
+                    <constraint firstAttribute="trailing" secondItem="sex-TQ-grd" secondAttribute="trailing" constant="16" id="Zkq-Bi-a4O"/>
+                    <constraint firstAttribute="bottom" secondItem="sex-TQ-grd" secondAttribute="bottom" id="gqH-88-No2"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="createTimeLabel" destination="acg-ge-msx" id="bVZ-X3-7MD"/>
-                <outlet property="itemNameLabel" destination="RdF-0n-jfP" id="6cE-64-FXX"/>
-                <outlet property="itemPriceLabel" destination="dqQ-wk-40x" id="M3W-ay-FbT"/>
-                <outlet property="itemSizeLabel" destination="Egb-B9-GNL" id="3sv-dh-bbs"/>
+                <outlet property="orderCreateTimeLabel" destination="U9A-XT-bwd" id="w51-cj-QFL"/>
+                <outlet property="orderNameLabel" destination="XHk-7A-ghZ" id="OjN-rh-TPW"/>
+                <outlet property="orderPriceLabel" destination="SGP-5U-SwP" id="V4a-FX-9dz"/>
+                <outlet property="orderSizeLabel" destination="6eE-lq-61g" id="7c9-Kg-s8j"/>
             </connections>
             <point key="canvasLocation" x="189.85507246376812" y="63.616071428571423"/>
         </tableViewCell>

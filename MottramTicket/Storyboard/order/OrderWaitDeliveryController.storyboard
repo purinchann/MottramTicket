@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uYn-yZ-9ti">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Order Wait Delivery Controller-->
+        <scene sceneID="0rB-t8-6EO">
+            <objects>
+                <viewController storyboardIdentifier="OrderWaitDeliveryController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uYn-yZ-9ti" customClass="OrderWaitDeliveryController" customModule="MottramTicket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AhS-0p-COi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ あなたのタピオカを手に入れました。 お受け取りお願いします。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzf-mi-lLP">
+                                <rect key="frame" x="16" y="44" width="382" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="3wW-uV-3F4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rX6-x4-xGn">
+                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rX6-x4-xGn" firstAttribute="leading" secondItem="Ut2-Gv-jYJ" secondAttribute="leading" id="1dB-ex-aEp"/>
+                            <constraint firstItem="Ut2-Gv-jYJ" firstAttribute="bottom" secondItem="rX6-x4-xGn" secondAttribute="bottom" id="3hG-DP-3Zv"/>
+                            <constraint firstItem="Ut2-Gv-jYJ" firstAttribute="trailing" secondItem="rX6-x4-xGn" secondAttribute="trailing" id="8xy-KI-HmI"/>
+                            <constraint firstItem="Kzf-mi-lLP" firstAttribute="leading" secondItem="Ut2-Gv-jYJ" secondAttribute="leading" constant="16" id="9Rd-25-cQd"/>
+                            <constraint firstItem="Kzf-mi-lLP" firstAttribute="top" secondItem="Ut2-Gv-jYJ" secondAttribute="top" id="JYx-3y-pPR"/>
+                            <constraint firstItem="Ut2-Gv-jYJ" firstAttribute="trailing" secondItem="Kzf-mi-lLP" secondAttribute="trailing" constant="16" id="T70-eG-aat"/>
+                            <constraint firstItem="rX6-x4-xGn" firstAttribute="top" secondItem="Kzf-mi-lLP" secondAttribute="bottom" id="Wez-vD-ebw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ut2-Gv-jYJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="rX6-x4-xGn" id="mxc-Au-Pq7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqm-Xi-bJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="79"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LDB-9O-AKj">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Order History Controller-->
+        <scene sceneID="XYI-PD-7vV">
+            <objects>
+                <viewController storyboardIdentifier="OrderHistoryController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LDB-9O-AKj" customClass="OrderHistoryController" customModule="MottramTicket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jCY-W7-R6s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ モッチャムチケットのご利用ありがとうございましたm(_ _)m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OX-1N-9AJ">
+                                <rect key="frame" x="16" y="44" width="382" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Kvj-pY-Cwp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このご注文は忘れません！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06z-qX-NuS">
+                                <rect key="frame" x="16" y="114" width="382" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ij7-nO-YBB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-IS-J6R">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="06z-qX-NuS" firstAttribute="leading" secondItem="jG0-WK-7wz" secondAttribute="leading" constant="16" id="37o-at-kaS"/>
+                            <constraint firstItem="06z-qX-NuS" firstAttribute="top" secondItem="9OX-1N-9AJ" secondAttribute="bottom" id="6w1-fu-AwV"/>
+                            <constraint firstItem="sl4-IS-J6R" firstAttribute="top" secondItem="06z-qX-NuS" secondAttribute="bottom" id="Bfh-mZ-v1F"/>
+                            <constraint firstItem="sl4-IS-J6R" firstAttribute="leading" secondItem="jG0-WK-7wz" secondAttribute="leading" id="EcH-wI-2Yb"/>
+                            <constraint firstItem="jG0-WK-7wz" firstAttribute="trailing" secondItem="06z-qX-NuS" secondAttribute="trailing" constant="16" id="Tht-X0-16F"/>
+                            <constraint firstItem="jG0-WK-7wz" firstAttribute="trailing" secondItem="sl4-IS-J6R" secondAttribute="trailing" id="Wpy-60-hLW"/>
+                            <constraint firstItem="9OX-1N-9AJ" firstAttribute="top" secondItem="jG0-WK-7wz" secondAttribute="top" id="aXc-gG-Qgl"/>
+                            <constraint firstItem="9OX-1N-9AJ" firstAttribute="leading" secondItem="jG0-WK-7wz" secondAttribute="leading" constant="16" id="b4W-u4-pgR"/>
+                            <constraint firstItem="jG0-WK-7wz" firstAttribute="bottom" secondItem="sl4-IS-J6R" secondAttribute="bottom" id="fgB-0i-Uw4"/>
+                            <constraint firstItem="jG0-WK-7wz" firstAttribute="trailing" secondItem="9OX-1N-9AJ" secondAttribute="trailing" constant="16" id="x4Y-Lv-bsw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jG0-WK-7wz"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="sl4-IS-J6R" id="GNn-ee-PlT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aT5-MW-te1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="85.714285714285708"/>
+        </scene>
+    </scenes>
+</document>
