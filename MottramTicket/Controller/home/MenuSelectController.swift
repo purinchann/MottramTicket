@@ -98,11 +98,6 @@ class MenuSelectController: UIViewController {
             return
         }
         
-        if !Date().isInBusinessHours() {
-            toast(message: "注文を受け付けている時間帯は午前11時〜午後18時までです", callback: {})
-            return
-        }
-        
         guard let menu = menu,
             let _shop = shop,
             let isSoldOut = menu.isSoldOut else {

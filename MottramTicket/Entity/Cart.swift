@@ -17,7 +17,7 @@ struct Cart {
     var createdAt: Double?
     var menuId: String?
     var shopId: String?
-    var isOrder: String?
+    var isOrder: Bool?
     
     init(dic: [String: Any]) {
         self.id = dic["id"] as? String
@@ -28,6 +28,6 @@ struct Cart {
         self.createdAt = dic["created_at"] as? Double
         self.menuId = dic["menu_id"] as? String
         self.shopId = dic["shop_id"] as? String
-        self.isOrder = dic["is_order"] as? String
+        self.isOrder = dic["is_order"] as? Bool
     }
 }

@@ -70,7 +70,14 @@ class HomeController: UIViewController {
     }
     
     @IBAction func toCart(_ sender: UIButton) {
-        print("カート画面")
+        
+        if let tabvc = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController  {
+            DispatchQueue.main.async {
+                tabvc.selectedIndex = 1
+            }
+        }
+        let vc = createController(storyboardName: "CartController")
+        self.tabBarController?.navigationController?.present(vc, animated: true, completion: nil)
     }
 }
 
