@@ -110,20 +110,44 @@ class MenuSelectController: UIViewController {
             return
         }
         
-        guard let userId = AuthDataStore.shared.currentUser.value?.id else { return }
-        let timestamp = Double(Date().timeIntervalSince1970)*1000
-        
-        let params: [String: Any] = [
-            "user_id": userId,
-            "menu_name": menu.nameJp ?? "",
-            "price": price,
-            "size": sizeAndPrice.size,
-            "created_at": timestamp,
-            "menu_id": menu.id ?? "",
-            "shop_id": _shop.id ?? "",
-            "is_order": false
-        ]
-        repository.createCart(params: params)
+        if let userId = AuthDataStore.shared.currentUser.value?.id {
+            
+            let timestamp = Double(Date().timeIntervalSince1970)*1000
+            
+            let params: [String: Any] = [
+                "user_id": userId,
+                "menu_name": menu.nameJp ?? "",
+                "price": price,
+                "size": sizeAndPrice.size,
+                "created_at": timestamp,
+                "menu_id": menu.id ?? "",
+                "shop_id": _shop.id ?? "",
+                "is_order": false
+            ]
+            repository.createCart(params: params)
+        } else {
+            // Google 処理
+            AuthDataStore.shared.user.asObservable().subscribe(onNext: {[weak self] user in
+                guard let `self` = self, let userId = user?.id else {
+                    return
+                }
+                let timestamp = Double(Date().timeIntervalSince1970)*1000
+                
+                let params: [String: Any] = [
+                    "user_id": userId,
+                    "menu_name": menu.nameJp ?? "",
+                    "price": price,
+                    "size": sizeAndPrice.size,
+                    "created_at": timestamp,
+                    "menu_id": menu.id ?? "",
+                    "shop_id": _shop.id ?? "",
+                    "is_order": false
+                ]
+                self.repository.createCart(params: params)
+                }, onError: { [weak self] _ in
+                    self?.toast(message: "失敗しました", callback: {})
+            }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }
     }
 }
 

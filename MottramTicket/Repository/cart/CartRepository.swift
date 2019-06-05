@@ -28,12 +28,27 @@ class CartRepository {
     
     func fetchList() {
         
-        guard let userId = AuthDataStore.shared.currentUser.value?.id else { return }
-        CartDataStore().whereByUserId(userId).subscribe(onNext: {[weak self] carts in
+        if let userId = AuthDataStore.shared.currentUser.value?.id {
+            CartDataStore().whereByUserId(userId).subscribe(onNext: {[weak self] carts in
                 self?.cartList.value = carts.filter{ !($0.isOrder ?? true) }
-            }, onError: {[weak self] error in
-                self?.cartList.value = []
+                }, onError: {[weak self] error in
+                    self?.cartList.value = []
+                }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        } else {
+            //Google処理
+            AuthDataStore.shared.user.asObservable().subscribe(onNext: {[weak self] user in
+                guard let `self` = self, let userId = user?.id else {
+                    return
+                }
+                CartDataStore().whereByUserId(userId).subscribe(onNext: {[weak self] carts in
+                    self?.cartList.value = carts.filter{ !($0.isOrder ?? true) }
+                    }, onError: {[weak self] error in
+                        self?.cartList.value = []
+                    }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
+                }, onError: { _ in
+                    self.cartList.value = []
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }
     }
     
     // カートの削除
@@ -48,7 +63,6 @@ class CartRepository {
     // カートの更新 &  オーダーの登録
     func createOrder(cnt: Int, carts: [Cart]) {
         
-        guard let userId = AuthDataStore.shared.currentUser.value?.id else { return }
         let timestamp = Double(Date().timeIntervalSince1970)*1000
         let orderMonth = Date().convertFormat("yyyyMM")
         let orderDateStr = Date().convertFormat("yyyyMMdd")
@@ -58,7 +72,7 @@ class CartRepository {
             let cartId = cart.id else {return}
         
         let params: [String: Any] = [
-            "user_id": userId,
+            "user_id": cart.userId ?? "",
             "order_name": cart.menuName ?? "",
             "price": cart.price ?? 0,
             "size": cart.size ?? "",
@@ -72,7 +86,10 @@ class CartRepository {
             "order_date": orderDateStr,
             "order_time": orderTimeStr,
             "menu_id": cart.menuId ?? "",
-            "shop_id": cart.shopId ?? ""
+            "shop_id": cart.shopId ?? "",
+            "paid_user_id": "",
+            "buyer_id": "",
+            "delivered_user_id": ""
         ]
         
         if  0 < cnt {
