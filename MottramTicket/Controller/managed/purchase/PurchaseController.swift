@@ -48,6 +48,7 @@ class PurchaseController: UIViewController {
         repository.orderList.asObservable().bind{[weak self] orders in
             guard let `self` = self else {return}
             if orders.isEmpty {return}
+            self.refreshControl.endRefreshing()
             self.orderList = orders
         }.disposed(by: disposeBag)
         
