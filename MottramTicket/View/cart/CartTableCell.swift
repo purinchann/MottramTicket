@@ -26,6 +26,6 @@ class CartTableCell: UITableViewCell {
         itemNameLabel.text = cart.menuName
         itemSizeLabel.text = "\(cart.size ?? "")サイズ"
         itemPriceLabel.text = "\(cart.price ?? 0)円"
-        createTimeLabel.text = "\(cart.createdAt ?? 0)"
+        createTimeLabel.text = "\(Date().elapsedTimeStr(unixtime: Int(cart.createdAt ?? 0)))"
     }
 }

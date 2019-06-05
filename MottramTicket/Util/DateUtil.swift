@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class DateUtil {
+    
+    func stringToDate(_ format: String, dateStr: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        guard let date = dateFormatter.date(from: dateStr) else {return Date()}
+        return date
+    }
+}

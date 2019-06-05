@@ -28,7 +28,7 @@ class OrderTableCell: UITableViewCell {
         orderNameLabel.text = order.orderName ?? ""
         orderSizeLabel.text = "\(order.size ?? "") サイズ"
         orderPriceLabel.text = "\(order.price ?? 0) 円"
-        orderCreateTimeLabel.text = "\(order.createdAt ?? 0.0)"
+        orderCreateTimeLabel.text = "\(Date().elapsedTimeStr(unixtime: Int(order.createdAt ?? 0)))"
         
         if (order.isComplete ?? false) {
             self.orderNameLabel.textColor = #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1)
