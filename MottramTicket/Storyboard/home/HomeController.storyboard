@@ -39,13 +39,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="5Gi-I8-Hqs">
                                     <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="414" height="350"/>
+                                    <size key="headerReferenceSize" width="414" height="450"/>
                                     <size key="footerReferenceSize" width="50" height="100"/>
                                     <inset key="sectionInset" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeMenuCell" id="aP3-qS-ogz" customClass="HomeMenuCell" customModule="MottramTicket" customModuleProvider="target">
-                                        <rect key="frame" x="2" y="350" width="200" height="320"/>
+                                        <rect key="frame" x="2" y="450" width="200" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="320"/>
@@ -82,17 +82,17 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeHeaderView" id="Kjk-ut-Kgr" customClass="HomeHeaderView" customModule="MottramTicket" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jpa-6Y-2a3">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="Sew-qp-P0A"/>
+                                                <constraint firstAttribute="height" constant="100" id="Sew-qp-P0A"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I5Q-NP-tSe">
-                                            <rect key="frame" x="32" y="50" width="350" height="300"/>
+                                            <rect key="frame" x="32" y="132" width="350" height="318"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quP-V2-y2Y">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
@@ -230,7 +230,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9E-BW-kHC">
-                                                    <rect key="frame" x="0.0" y="290.5" width="350" height="9.5"/>
+                                                    <rect key="frame" x="0.0" y="290.5" width="350" height="27.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
@@ -239,9 +239,9 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="I5Q-NP-tSe" secondAttribute="bottom" id="B64-P1-swr"/>
                                         <constraint firstAttribute="trailing" secondItem="Jpa-6Y-2a3" secondAttribute="trailing" id="KuS-5H-FCA"/>
+                                        <constraint firstItem="I5Q-NP-tSe" firstAttribute="top" secondItem="Jpa-6Y-2a3" secondAttribute="bottom" constant="32" id="TJq-f3-jdI"/>
                                         <constraint firstAttribute="trailing" secondItem="I5Q-NP-tSe" secondAttribute="trailing" constant="32" id="TsR-bp-vsc"/>
                                         <constraint firstItem="Jpa-6Y-2a3" firstAttribute="leading" secondItem="Kjk-ut-Kgr" secondAttribute="leading" id="ZTG-hF-tKg"/>
-                                        <constraint firstItem="I5Q-NP-tSe" firstAttribute="top" secondItem="Jpa-6Y-2a3" secondAttribute="bottom" id="gc7-km-PoF"/>
                                         <constraint firstItem="Jpa-6Y-2a3" firstAttribute="top" secondItem="Kjk-ut-Kgr" secondAttribute="top" id="mZC-gY-bXJ"/>
                                         <constraint firstItem="I5Q-NP-tSe" firstAttribute="leading" secondItem="Kjk-ut-Kgr" secondAttribute="leading" constant="32" id="veK-g9-On1"/>
                                     </constraints>
@@ -252,7 +252,7 @@
                                     </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeFooterView" id="0nQ-T7-YvG">
-                                    <rect key="frame" x="0.0" y="670" width="414" height="100"/>
+                                    <rect key="frame" x="0.0" y="770" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJi-C5-hoH">

@@ -73,6 +73,8 @@
 		5D520DBD22A8029000847B66 /* RenewalActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D520DBC22A8029000847B66 /* RenewalActionController.swift */; };
 		5D520DC022A8035D00847B66 /* RenewalActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D520DBF22A8035D00847B66 /* RenewalActionRepository.swift */; };
 		5D520DC222A83B7A00847B66 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D520DC122A83B7A00847B66 /* DateUtil.swift */; };
+		5D520DC522A85D9B00847B66 /* AdController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D520DC422A85D9B00847B66 /* AdController.storyboard */; };
+		5D520DC822A85DB600847B66 /* AdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D520DC722A85DB600847B66 /* AdController.swift */; };
 		5D695C7922A4CB140091AC7C /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D695C7822A4CB140091AC7C /* UILabel+Ext.swift */; };
 		5D695C7C22A4E5DE0091AC7C /* HomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D695C7B22A4E5DE0091AC7C /* HomeMenuCell.swift */; };
 		5D695C7E22A4E8640091AC7C /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D695C7D22A4E8640091AC7C /* HomeHeaderView.swift */; };
@@ -167,6 +169,8 @@
 		5D520DBC22A8029000847B66 /* RenewalActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenewalActionController.swift; sourceTree = "<group>"; };
 		5D520DBF22A8035D00847B66 /* RenewalActionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenewalActionRepository.swift; sourceTree = "<group>"; };
 		5D520DC122A83B7A00847B66 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		5D520DC422A85D9B00847B66 /* AdController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdController.storyboard; sourceTree = "<group>"; };
+		5D520DC722A85DB600847B66 /* AdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdController.swift; sourceTree = "<group>"; };
 		5D695C7822A4CB140091AC7C /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		5D695C7B22A4E5DE0091AC7C /* HomeMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuCell.swift; sourceTree = "<group>"; };
 		5D695C7D22A4E8640091AC7C /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
@@ -421,6 +425,22 @@
 			path = renewal;
 			sourceTree = "<group>";
 		};
+		5D520DC322A85D8200847B66 /* ad */ = {
+			isa = PBXGroup;
+			children = (
+				5D520DC422A85D9B00847B66 /* AdController.storyboard */,
+			);
+			path = ad;
+			sourceTree = "<group>";
+		};
+		5D520DC622A85DA600847B66 /* ad */ = {
+			isa = PBXGroup;
+			children = (
+				5D520DC722A85DB600847B66 /* AdController.swift */,
+			);
+			path = ad;
+			sourceTree = "<group>";
+		};
 		5D695C7A22A4E5C00091AC7C /* home */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +540,7 @@
 		5D6D54E5229C285100D15A24 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5D520DC622A85DA600847B66 /* ad */,
 				5D1DE19B22A6FA380024F139 /* managed */,
 				5D45E23C22A39AB10019D89C /* order */,
 				5D45E23922A39A880019D89C /* cart */,
@@ -570,6 +591,7 @@
 		5D6D54E9229C288F00D15A24 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				5D520DC322A85D8200847B66 /* ad */,
 				5D1DE1A222A6FC270024F139 /* managed */,
 				5D45E22F22A39A140019D89C /* order */,
 				5D45E22E22A39A0D0019D89C /* cart */,
@@ -704,6 +726,7 @@
 				5D45E23322A39A440019D89C /* CartController.storyboard in Resources */,
 				5D1DE16A22A682C20024F139 /* MenuFocusView.xib in Resources */,
 				5D45E23122A39A2F0019D89C /* HomeController.storyboard in Resources */,
+				5D520DC522A85D9B00847B66 /* AdController.storyboard in Resources */,
 				5D1DE1A622A6FC5D0024F139 /* RenewalScanController.storyboard in Resources */,
 				5D695CA022A5744E0091AC7C /* CartTableCell.xib in Resources */,
 				5D45E21D22A34D420019D89C /* LoginController.storyboard in Resources */,
@@ -837,6 +860,7 @@
 				5D1DE19F22A6FBA50024F139 /* RenewalScanController.swift in Sources */,
 				5D1DE17322A686250024F139 /* OrderMakingController.swift in Sources */,
 				5D1DE17122A686140024F139 /* OrderNoPaidController.swift in Sources */,
+				5D520DC822A85DB600847B66 /* AdController.swift in Sources */,
 				5D1DE1AC22A7057E0024F139 /* PurchaseRepository.swift in Sources */,
 				5D520DC222A83B7A00847B66 /* DateUtil.swift in Sources */,
 				5D695C8422A4ED010091AC7C /* AdDataStore.swift in Sources */,

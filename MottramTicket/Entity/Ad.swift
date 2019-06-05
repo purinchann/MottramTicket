@@ -13,7 +13,7 @@ struct Ad {
     var pageUrl: String?
     
     init(dic: [String: Any]) {
-        self.bannarImageUrl = dic["bannar_image_url"] as? String
+        self.bannarImageUrl = dic["banner_image_url"] as? String
         self.pageUrl = dic["page_url"] as? String
     }
 }

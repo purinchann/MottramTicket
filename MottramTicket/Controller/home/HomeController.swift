@@ -21,10 +21,10 @@ class HomeController: UIViewController {
     
     var menuList: [Menu] = []
     
-    var isReloadPair: (isMenus: Bool, isShop: Bool) = (isMenus: false, isShop: false) {
+    var isReloadSet: (isMenus: Bool, isShop: Bool, isAd: Bool) = (isMenus: false, isShop: false, isAd: false) {
         didSet {
-            if (self.isReloadPair.isMenus && self.isReloadPair.isShop) {
-                isReloadPair = (isMenus: false, isShop: false)
+            if (self.isReloadSet.isMenus && self.isReloadSet.isShop && isReloadSet.isAd) {
+                isReloadSet = (isMenus: false, isShop: false, isAd: false)
                 collectionView.reloadData()
             }
         }
@@ -60,6 +60,7 @@ class HomeController: UIViewController {
                 return
             }
             self.ad = ad
+            self.isReloadSet.isAd = true
         }.disposed(by: disposeBag)
         
         repository.shop.asObservable().bind{ [weak self] value in
@@ -67,7 +68,7 @@ class HomeController: UIViewController {
                 return
             }
             self.shop = shop
-            self.isReloadPair.isShop = true
+            self.isReloadSet.isShop = true
         }.disposed(by: disposeBag)
         
         repository.menuList.asObservable().bind { [weak self] value in
@@ -77,7 +78,7 @@ class HomeController: UIViewController {
                 let shopNumberStr = menu.handlingShopNumber ?? ""
                 return shopNumberStr.contains("4")
             })
-            self.isReloadPair.isMenus = true
+            self.isReloadSet.isMenus = true
         }.disposed(by: disposeBag)
     }
     
@@ -135,6 +136,13 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource {
             return footer
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        let width = ViewUtil.shared.getScreenWidth()
+        let height = width + (width/4)
+        return CGSize(width: width, height: height)
+    }
 }
 
 extension HomeController: UICollectionViewDelegateFlowLayout {
@@ -142,5 +150,17 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = ViewUtil.shared.getScreenWidth()/2 - 6.0, height = ViewUtil.shared.getScreenWidth() + 30.0
         return CGSize(width: width, height: height)
+    }
+}
+
+extension HomeController: HomeHeaderViewDelegate {
+    
+    func toAdAction(url: String) {
+        
+        guard let adVC = createController(storyboardName: "AdController") as? AdController else {
+            return
+        }
+        adVC.urlString = url
+        navigationController?.pushViewController(adVC, animated: true)
     }
 }
