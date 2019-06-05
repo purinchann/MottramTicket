@@ -88,7 +88,7 @@ class BaseController: UITabBarController {
         controller1.tabBarItem = tabBarItem1
         controllers.append(controller1)
         
-        let controller2 = createController(storyboardName: "CartController")
+        let controller2 = createController(storyboardName: "RenewalScanController")
         let tabBarItem2 = UITabBarItem(title: "QRスキャン",
                                        image: UIImage(named: "qrcode_off"),
                                        selectedImage: UIImage(named: "qrcode_on"))

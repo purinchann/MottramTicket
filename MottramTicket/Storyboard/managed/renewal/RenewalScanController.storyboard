@@ -33,10 +33,87 @@
                     <view key="view" contentMode="scaleToFill" id="p0n-gM-MVc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="HyJ-Ka-3Xe">
+                                <rect key="frame" x="16" y="120" width="382" height="710"/>
+                                <subviews>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="uWB-Zg-Zju">
+                                        <rect key="frame" x="41" y="0.0" width="300" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="3sd-0v-c7G"/>
+                                            <constraint firstAttribute="width" constant="300" id="pef-Ej-OG5"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.51372549019607838" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ER6-7R-jSw">
+                                        <rect key="frame" x="0.0" y="332" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Xvy-Sv-Eae"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU7-Th-oL4">
+                                        <rect key="frame" x="0.0" y="414" width="382" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Sic-q3-Xmj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="更新画面へ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="toRenewalAction:" destination="ccv-S6-VvL" eventType="touchUpInside" id="ZwR-Ci-86p"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fs2-Nk-sKk">
+                                        <rect key="frame" x="71" y="496" width="240" height="214"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ER6-7R-jSw" secondAttribute="trailing" id="EZq-lE-d1I"/>
+                                    <constraint firstItem="ER6-7R-jSw" firstAttribute="leading" secondItem="HyJ-Ka-3Xe" secondAttribute="leading" id="IYz-Z7-jnw"/>
+                                    <constraint firstItem="jU7-Th-oL4" firstAttribute="leading" secondItem="HyJ-Ka-3Xe" secondAttribute="leading" id="iiB-si-QzU"/>
+                                    <constraint firstAttribute="trailing" secondItem="jU7-Th-oL4" secondAttribute="trailing" id="wrS-L5-jV6"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HyJ-Ka-3Xe" firstAttribute="top" secondItem="NNg-Ej-pkk" secondAttribute="top" constant="32" id="NP4-Ou-1MB"/>
+                            <constraint firstItem="NNg-Ej-pkk" firstAttribute="bottom" secondItem="HyJ-Ka-3Xe" secondAttribute="bottom" constant="32" id="f3P-wN-NRI"/>
+                            <constraint firstItem="NNg-Ej-pkk" firstAttribute="trailing" secondItem="HyJ-Ka-3Xe" secondAttribute="trailing" constant="16" id="fqe-kX-hF9"/>
+                            <constraint firstItem="HyJ-Ka-3Xe" firstAttribute="leading" secondItem="NNg-Ej-pkk" secondAttribute="leading" constant="16" id="sb3-7I-5cN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NNg-Ej-pkk"/>
                     </view>
                     <navigationItem key="navigationItem" id="7gi-fG-Ybm"/>
+                    <connections>
+                        <outlet property="captureView" destination="uWB-Zg-Zju" id="pHz-SW-u2v"/>
+                        <outlet property="orderIdLabel" destination="ER6-7R-jSw" id="oTB-BW-CeP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M92-wZ-i7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
