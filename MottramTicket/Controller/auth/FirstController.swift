@@ -31,6 +31,7 @@ class FirstController: UIViewController {
     func bindGoogleAuth() {
         
         appDelegate.googleAuthInfo.asObservable().bind{ [weak self] authcation in
+            if authcation.withIDToken.isEmpty && authcation.accessToken.isEmpty {return}
             let credential = GoogleAuthProvider.credential(withIDToken: authcation.withIDToken, accessToken: authcation.accessToken)
             self?.repository.googleSignup(credential: credential)
         }.disposed(by: disposeBag)

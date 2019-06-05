@@ -14,7 +14,17 @@ class BaseController: UITabBarController {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        createTabBarControllers()
+        
+        if let user = AuthDataStore.shared.currentUser.value {
+            let role = user.role ?? 0
+            if 0 < role {
+                createManagedTabBarControllers()
+            } else {
+                createTabBarControllers()
+            }
+        } else {
+            createTabBarControllers()
+        }
     }
     
     override func viewDidLoad() {
@@ -61,7 +71,33 @@ class BaseController: UITabBarController {
         controllers.append(controller3)
 
         setViewControllers(controllers, animated: false)
-                //selectedIndex = 1
+        selectedIndex = 1
+        selectedIndex = 0
+    }
+    
+    
+    private func createManagedTabBarControllers() {
+        
+        var controllers: [UIViewController] = []
+        
+        let controller1 = createController(storyboardName: "PurchaseController")
+        let tabBarItem1 = UITabBarItem(title: "未購入リスト",
+                                       image: UIImage(named: "check_file_off"),
+                                       selectedImage: UIImage(named: "check_file_on"))
+        tabBarItem1.imageInsets = tabBarItemInsets
+        controller1.tabBarItem = tabBarItem1
+        controllers.append(controller1)
+        
+        let controller2 = createController(storyboardName: "CartController")
+        let tabBarItem2 = UITabBarItem(title: "QRスキャン",
+                                       image: UIImage(named: "qrcode_off"),
+                                       selectedImage: UIImage(named: "qrcode_on"))
+        tabBarItem2.imageInsets = tabBarItemInsets
+        controller2.tabBarItem = tabBarItem2
+        controllers.append(controller2)
+        
+        setViewControllers(controllers, animated: false)
+        selectedIndex = 1
         selectedIndex = 0
     }
 }

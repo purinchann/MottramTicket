@@ -62,4 +62,40 @@ class OrderDataStore: BaseDataStore {
             return Disposables.create()
         })
     }
+    
+    func findById(id: String) -> Observable<Order> {
+        return Observable.create({ (observer) -> Disposable in
+            self.ref.document(id).getDocument(completion: { doc, error in
+                
+                guard let jsonDic = doc?.data() else {
+                    observer.onError(AppError.generic)
+                    return
+                }
+                let shop = Order(dic: jsonDic)
+                observer.onNext(shop)
+            })
+            return Disposables.create()
+        })
+    }
+    
+    func whereByTodayOrder(dateStr: String) -> Observable<[Order]> {
+        return Observable.create({ (observer) -> Disposable in
+            self.ref.whereField("order_date", isEqualTo: dateStr).getDocuments(completion: { snapshot, error in
+                guard let querySnapshot = snapshot else {
+                    observer.onError(AppError.generic)
+                    return
+                }
+                let orders = querySnapshot.documents.map({ value in
+                    return Order(dic: value.data())
+                }).filter({ order in
+                    return (order.isPaid ?? false) &&
+                        !(order.isMake ?? false) &&
+                        !(order.isComplete ?? false) &&
+                        !(order.isCancel ?? false)
+                })
+                observer.onNext(orders)
+            })
+            return Disposables.create()
+        })
+    }
 }
