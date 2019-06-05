@@ -17,12 +17,7 @@ class OrderRepository {
         
         if let userId = AuthDataStore.shared.currentUser.value?.id {
             OrderDataStore().whereByUserId(userId).subscribe(onNext: {[weak self] orders in
-                self?.orderList.value = orders.filter({order in
-                    return !(order.isPaid ?? false) &&
-                        !(order.isMake ?? false) &&
-                        !(order.isComplete ?? false) &&
-                        !(order.isCancel ?? false)
-                })
+                self?.orderList.value = orders
                 }, onError: {[weak self] error in
                     self?.orderList.value = []
                 }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
@@ -33,12 +28,7 @@ class OrderRepository {
                     return
                 }
                 OrderDataStore().whereByUserId(userId).subscribe(onNext: {[weak self] orders in
-                    self?.orderList.value = orders.filter({order in
-                        return !(order.isPaid ?? false) &&
-                            !(order.isMake ?? false) &&
-                            !(order.isComplete ?? false) &&
-                            !(order.isCancel ?? false)
-                    })
+                    self?.orderList.value = orders
                     }, onError: {[weak self] error in
                         self?.orderList.value = []
                     }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)

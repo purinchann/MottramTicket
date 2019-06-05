@@ -29,6 +29,9 @@ class OrderHistoryController: UIViewController {
     }
     
     private func setupTableView() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "OrderTableCell", bundle: nil), forCellReuseIdentifier: "cell")
