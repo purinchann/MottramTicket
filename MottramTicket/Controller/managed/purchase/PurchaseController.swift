@@ -96,10 +96,13 @@ extension PurchaseController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteButton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "購入完了") { (action, index) -> Void in
-            guard let order = self.orderList.atIndex(indexPath.row), let orderId = order.id else {
+            guard let order = self.orderList.atIndex(indexPath.row),
+                let orderId = order.id,
+                let orderName = order.orderName,
+                let orderUserId = order.userId else {
                 return
             }
-            self.repository.purchaseComplete(orderId: orderId, indexRow: indexPath.row)
+            self.repository.purchaseComplete(orderId: orderId, orderName: orderName, customerId: orderUserId, indexRow: indexPath.row)
         }
         deleteButton.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.262745098, blue: 0.2117647059, alpha: 1)
         return [deleteButton]

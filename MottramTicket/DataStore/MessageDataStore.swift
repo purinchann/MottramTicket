@@ -13,6 +13,26 @@ class MessageDataStore: BaseDataStore {
     
     var path: String { return "messages" }
     
+    func add(_ params: [String: Any]) -> Observable<Bool> {
+        return Observable.create({ (observer) -> Disposable in
+            let documentID = self.ref.addDocument(data: params){ error in
+                if let _ = error {
+                    observer.onError(AppError.generic)
+                    return
+                }
+                }.documentID
+            self.ref.document(documentID).updateData(["id": documentID]){error in
+                if let err = error {
+                    print(err)
+                    observer.onError(AppError.generic)
+                } else {
+                    observer.onNext(true)
+                }
+            }
+            return Disposables.create()
+        })
+    }
+    
     func whereByUserId(_ userId: String) -> Observable<[Message]> {
         
         return Observable.create({ (observer) -> Disposable in
