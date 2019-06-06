@@ -36,6 +36,10 @@
 		5D1DE1A622A6FC5D0024F139 /* RenewalScanController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1DE1A522A6FC5D0024F139 /* RenewalScanController.storyboard */; };
 		5D1DE1A822A6FC710024F139 /* PurchaseController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1DE1A722A6FC710024F139 /* PurchaseController.storyboard */; };
 		5D1DE1AC22A7057E0024F139 /* PurchaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DE1AB22A7057E0024F139 /* PurchaseRepository.swift */; };
+		5D2A6C5222A8ABCE00C7BA84 /* MessageController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2A6C5122A8ABCE00C7BA84 /* MessageController.storyboard */; };
+		5D2A6C5422A8AC1100C7BA84 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A6C5322A8AC1100C7BA84 /* MessageController.swift */; };
+		5D2A6C5722A8AD2300C7BA84 /* MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A6C5622A8AD2300C7BA84 /* MessageRepository.swift */; };
+		5D2A6C5A22A8B05600C7BA84 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A6C5922A8B05600C7BA84 /* MessageCell.swift */; };
 		5D45E1FD22A348BA0019D89C /* BaseDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45E1FC22A348BA0019D89C /* BaseDataStore.swift */; };
 		5D45E1FF22A348EC0019D89C /* AuthDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45E1FE22A348EC0019D89C /* AuthDataStore.swift */; };
 		5D45E20122A349150019D89C /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45E20022A349150019D89C /* UserDataStore.swift */; };
@@ -132,6 +136,10 @@
 		5D1DE1A522A6FC5D0024F139 /* RenewalScanController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RenewalScanController.storyboard; sourceTree = "<group>"; };
 		5D1DE1A722A6FC710024F139 /* PurchaseController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseController.storyboard; sourceTree = "<group>"; };
 		5D1DE1AB22A7057E0024F139 /* PurchaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseRepository.swift; sourceTree = "<group>"; };
+		5D2A6C5122A8ABCE00C7BA84 /* MessageController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageController.storyboard; sourceTree = "<group>"; };
+		5D2A6C5322A8AC1100C7BA84 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		5D2A6C5622A8AD2300C7BA84 /* MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepository.swift; sourceTree = "<group>"; };
+		5D2A6C5922A8B05600C7BA84 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		5D45E1FC22A348BA0019D89C /* BaseDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataStore.swift; sourceTree = "<group>"; };
 		5D45E1FE22A348EC0019D89C /* AuthDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataStore.swift; sourceTree = "<group>"; };
 		5D45E20022A349150019D89C /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
@@ -325,6 +333,38 @@
 				5D1DE1AB22A7057E0024F139 /* PurchaseRepository.swift */,
 			);
 			path = purchase;
+			sourceTree = "<group>";
+		};
+		5D2A6C4F22A8ABAE00C7BA84 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				5D2A6C5122A8ABCE00C7BA84 /* MessageController.storyboard */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		5D2A6C5022A8ABBE00C7BA84 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				5D2A6C5322A8AC1100C7BA84 /* MessageController.swift */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		5D2A6C5522A8AD0D00C7BA84 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				5D2A6C5622A8AD2300C7BA84 /* MessageRepository.swift */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		5D2A6C5822A8B04500C7BA84 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				5D2A6C5922A8B05600C7BA84 /* MessageCell.swift */,
+			);
+			path = message;
 			sourceTree = "<group>";
 		};
 		5D45E20C22A34BDC0019D89C /* auth */ = {
@@ -540,6 +580,7 @@
 		5D6D54E5229C285100D15A24 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5D2A6C5022A8ABBE00C7BA84 /* message */,
 				5D520DC622A85DA600847B66 /* ad */,
 				5D1DE19B22A6FA380024F139 /* managed */,
 				5D45E23C22A39AB10019D89C /* order */,
@@ -554,6 +595,7 @@
 		5D6D54E6229C286100D15A24 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5D2A6C5822A8B04500C7BA84 /* message */,
 				5D1DE16D22A6843B0024F139 /* order */,
 				5D1DE16222A668970024F139 /* common */,
 				5D695CA122A57AE50091AC7C /* cart */,
@@ -565,6 +607,7 @@
 		5D6D54E7229C287000D15A24 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				5D2A6C5522A8AD0D00C7BA84 /* message */,
 				5D1DE1A922A7055C0024F139 /* managed */,
 				5D1DE18022A695C20024F139 /* order */,
 				5DB214B322A58C33000FAFC5 /* cart */,
@@ -591,6 +634,7 @@
 		5D6D54E9229C288F00D15A24 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				5D2A6C4F22A8ABAE00C7BA84 /* message */,
 				5D520DC322A85D8200847B66 /* ad */,
 				5D1DE1A222A6FC270024F139 /* managed */,
 				5D45E22F22A39A140019D89C /* order */,
@@ -730,6 +774,7 @@
 				5D1DE1A622A6FC5D0024F139 /* RenewalScanController.storyboard in Resources */,
 				5D695CA022A5744E0091AC7C /* CartTableCell.xib in Resources */,
 				5D45E21D22A34D420019D89C /* LoginController.storyboard in Resources */,
+				5D2A6C5222A8ABCE00C7BA84 /* MessageController.storyboard in Resources */,
 				5D1DE1A822A6FC710024F139 /* PurchaseController.storyboard in Resources */,
 				5D1DE17D22A686790024F139 /* OrderWaitDeliveryController.storyboard in Resources */,
 				5D1DE19622A6DC230024F139 /* OrderQRCodeController.storyboard in Resources */,
@@ -869,6 +914,7 @@
 				5D45E22522A35C8F0019D89C /* FirstController.swift in Sources */,
 				5D1DE19022A6BEA40024F139 /* OrderNoPaidRepository.swift in Sources */,
 				5D1DE18E22A6B76A0024F139 /* OrderRepository.swift in Sources */,
+				5D2A6C5A22A8B05600C7BA84 /* MessageCell.swift in Sources */,
 				5D6D54D5229C0A5E00D15A24 /* ViewController.swift in Sources */,
 				5D45E23822A39A7F0019D89C /* HomeController.swift in Sources */,
 				5D45E21522A34C8C0019D89C /* Array+Ext.swift in Sources */,
@@ -903,6 +949,7 @@
 				5D45E20322A349780019D89C /* User.swift in Sources */,
 				5D6D54D3229C0A5E00D15A24 /* AppDelegate.swift in Sources */,
 				5D1DE19222A6BEBC0024F139 /* OrderMakingRepository.swift in Sources */,
+				5D2A6C5722A8AD2300C7BA84 /* MessageRepository.swift in Sources */,
 				5D45E20522A349B90019D89C /* Constants.swift in Sources */,
 				5D45E24022A3B6690019D89C /* Shop.swift in Sources */,
 				5D520DBD22A8029000847B66 /* RenewalActionController.swift in Sources */,
@@ -911,6 +958,7 @@
 				5D1DE19822A6EE790024F139 /* Message.swift in Sources */,
 				5D45E21B22A34D030019D89C /* LoginController.swift in Sources */,
 				5D1DE19A22A6F1450024F139 /* MessageDataStore.swift in Sources */,
+				5D2A6C5422A8AC1100C7BA84 /* MessageController.swift in Sources */,
 				5D695C8822A4EE3E0091AC7C /* ViewUtil.swift in Sources */,
 				5D45E22C22A384FE0019D89C /* FirstRepository.swift in Sources */,
 				5D45E24222A3B8B10019D89C /* Menu.swift in Sources */,

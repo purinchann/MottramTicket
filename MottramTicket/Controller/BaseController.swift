@@ -69,6 +69,14 @@ class BaseController: UITabBarController {
         tabBarItem3.imageInsets = tabBarItemInsets
         controller3.tabBarItem = tabBarItem3
         controllers.append(controller3)
+        
+        let controller4 = createController(storyboardName: "MessageController")
+        let tabBarItem4 = UITabBarItem(title: "通知",
+                                       image: UIImage(named: "notification_off"),
+                                       selectedImage: UIImage(named: "notification_on"))
+        tabBarItem4.imageInsets = tabBarItemInsets
+        controller4.tabBarItem = tabBarItem4
+        controllers.append(controller4)
 
         setViewControllers(controllers, animated: false)
         selectedIndex = 1
