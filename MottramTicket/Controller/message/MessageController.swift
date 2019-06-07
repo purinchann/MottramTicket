@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class MessageController: UIViewController {
+class MessageController: SetConnectController {
     
     @IBOutlet weak var tableView: UITableView!
     

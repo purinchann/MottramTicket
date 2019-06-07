@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class CartController: UIViewController {
+class CartController: SetConnectController {
     
     @IBOutlet weak var tableView: UITableView!
     

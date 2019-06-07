@@ -10,7 +10,7 @@ import UIKit
 import PagingKit
 import RxSwift
 
-class OrderController: UIViewController {
+class OrderController: SetConnectController {
     
     var menuViewController: PagingMenuViewController!
     var contentViewController: PagingContentViewController!

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class HomeController: UIViewController {
+class HomeController: SetConnectController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     

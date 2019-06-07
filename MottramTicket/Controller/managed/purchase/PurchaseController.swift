@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class PurchaseController: UIViewController {
+class PurchaseController: SetConnectController {
     
     @IBOutlet weak var tableView: UITableView!
     
