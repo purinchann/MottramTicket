@@ -10,6 +10,32 @@ import UIKit
 import PagingKit
 import RxSwift
 
+protocol OrderListDelegate: class {}
+
+extension OrderListDelegate {
+    
+    func sortedByUploadTime(orders: [Order]) -> [Order] {
+        return orders.sorted(by: {(l, s) in
+            let sTimeStr = s.orderTime ?? ""
+            let lTimeStr = l.orderTime ?? ""
+            let sTime = DateUtil().stringToDate("yyyyMMddHHmm", dateStr: sTimeStr)
+            let lTime = DateUtil().stringToDate("yyyyMMddHHmm", dateStr: lTimeStr)
+            return sTime < lTime
+        })
+    }
+    
+    func reverseSortedByUploadTime(orders: [Order]) -> [Order] {
+        return orders.sorted(by: {(l, s) in
+            let sTimeStr = s.orderTime ?? ""
+            let lTimeStr = l.orderTime ?? ""
+            let sTime = DateUtil().stringToDate("yyyyMMddHHmm", dateStr: sTimeStr)
+            let lTime = DateUtil().stringToDate("yyyyMMddHHmm", dateStr: lTimeStr)
+            return sTime > lTime
+        })
+    }
+}
+
+
 class OrderController: SetConnectController {
     
     var menuViewController: PagingMenuViewController!

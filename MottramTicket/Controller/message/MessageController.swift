@@ -9,7 +9,22 @@
 import UIKit
 import RxSwift
 
-class MessageController: SetConnectController {
+protocol MessageListDelegate: class {}
+
+extension MessageListDelegate {
+    
+    func sortedByUploadTime(messages: [Message]) -> [Message] {
+        return messages.sorted(by: {(l, s) in
+            let sTimeStr = s.messageTime ?? ""
+            let lTimeStr = l.messageTime ?? ""
+            let sTime = DateUtil().stringToDate("yyyyMMddHHmm", dateStr: sTimeStr)
+            let lTime = DateUtil().stringToDate("yyyyMMddHHmm", dateStr: lTimeStr)
+            return sTime < lTime
+        })
+    }
+}
+
+class MessageController: SetConnectController, MessageListDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -47,7 +62,7 @@ class MessageController: SetConnectController {
         repository.messageList.asObservable().bind{[weak self] messages in
             guard let `self` = self else {return}
             if messages.isEmpty {return}
-            self.messageList = messages
+            self.messageList = self.sortedByUploadTime(messages: messages)
         }.disposed(by: disposeBag)
         
         repository.isWatchResult.asObservable().bind{[weak self] isRes in

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class PurchaseController: SetConnectController {
+class PurchaseController: SetConnectController, OrderListDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -49,7 +49,7 @@ class PurchaseController: SetConnectController {
             guard let `self` = self else {return}
             if orders.isEmpty {return}
             self.refreshControl.endRefreshing()
-            self.orderList = orders
+            self.orderList = self.reverseSortedByUploadTime(orders: orders)
         }.disposed(by: disposeBag)
         
         repository.selectIndex.asObservable().bind{[weak self] indexRow in

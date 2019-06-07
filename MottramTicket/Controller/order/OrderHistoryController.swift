@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class OrderHistoryController: UIViewController {
+class OrderHistoryController: UIViewController, OrderListDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,12 +45,13 @@ class OrderHistoryController: UIViewController {
         orderVC.baseOrderList.asObservable().bind{[weak self] orders in
             guard let `self` = self else {return}
             if orders.isEmpty {return}
-            self.orderList = orders.filter({order in
+            let historyOrderList = orders.filter({order in
                 return (order.isPaid ?? false) &&
                     (order.isMake ?? false) &&
                     (order.isComplete ?? false) &&
                     !(order.isCancel ?? false)
             })
+            self.orderList = self.sortedByUploadTime(orders: historyOrderList)
             }.disposed(by: disposeBag)
     }
 }

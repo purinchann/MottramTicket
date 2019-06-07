@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class OrderNoPaidController: UIViewController {
+class OrderNoPaidController: UIViewController, OrderListDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -44,12 +44,13 @@ class OrderNoPaidController: UIViewController {
         orderVC.baseOrderList.asObservable().bind{[weak self] orders in
             guard let `self` = self else {return}
             if orders.isEmpty {return}
-            self.orderList = orders.filter({order in
+            let noPaidOrderList = orders.filter({order in
                 return !(order.isPaid ?? false) &&
                     !(order.isMake ?? false) &&
                     !(order.isComplete ?? false) &&
                     !(order.isCancel ?? false)
                 })
+            self.orderList = self.sortedByUploadTime(orders: noPaidOrderList)
         }.disposed(by: disposeBag)
         
         repository.cancelIndex.asObservable().bind{[weak self] indexRow in
