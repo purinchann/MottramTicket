@@ -169,7 +169,7 @@ enum OrderStatusType: Int {
         guard let userId = AuthDataStore.shared.currentUser.value?.id else {
             return nil
         }
-        let timestamp = Double(Date().timeIntervalSince1970)*1000
+        let timestamp = Int(Date().timeIntervalSince1970)*1000
         switch self {
         case .notPaid:
             let params: [String: Any] = [

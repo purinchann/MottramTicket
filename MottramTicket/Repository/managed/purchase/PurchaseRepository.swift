@@ -27,7 +27,7 @@ class PurchaseRepository {
     func purchaseComplete(orderId: String, orderName: String, customerId: String, indexRow: Int) {
         
         guard let userId = AuthDataStore.shared.currentUser.value?.id else {return}
-        let timestamp = Double(Date().timeIntervalSince1970)*1000
+        let timestamp = Int(Date().timeIntervalSince1970)*1000
         
         let params: [String: Any] = [
             "is_make": true,
@@ -40,7 +40,6 @@ class PurchaseRepository {
             let messageMonth = Date().convertFormat("yyyyMM")
             let messageDateStr = Date().convertFormat("yyyyMMdd")
             let messageTimeStr = Date().convertFormat("yyyyMMddHHmm")
-            let timestamp = Double(Date().timeIntervalSince1970)*1000
             
             let messageParams: [String: Any] = [
                 "message_text": "ご注文いただいた\(orderName)を手に入れました。受け取りにお越しください。",

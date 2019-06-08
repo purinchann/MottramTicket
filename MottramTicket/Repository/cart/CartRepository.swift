@@ -63,7 +63,7 @@ class CartRepository {
     // カートの更新 &  オーダーの登録
     func createOrder(cnt: Int, carts: [Cart]) {
         
-        let timestamp = Double(Date().timeIntervalSince1970)*1000
+        let timestamp = Int(Date().timeIntervalSince1970)*1000
         let orderMonth = Date().convertFormat("yyyyMM")
         let orderDateStr = Date().convertFormat("yyyyMMdd")
         let orderTimeStr = Date().convertFormat("yyyyMMddHHmm")

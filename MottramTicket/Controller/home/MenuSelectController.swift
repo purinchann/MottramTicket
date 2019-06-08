@@ -110,9 +110,9 @@ class MenuSelectController: UIViewController {
             return
         }
         
+        let timestamp = Int(Date().timeIntervalSince1970)*1000
+        
         if let userId = AuthDataStore.shared.currentUser.value?.id {
-            
-            let timestamp = Double(Date().timeIntervalSince1970)*1000
             
             let params: [String: Any] = [
                 "user_id": userId,
@@ -131,7 +131,6 @@ class MenuSelectController: UIViewController {
                 guard let `self` = self, let userId = user?.id else {
                     return
                 }
-                let timestamp = Double(Date().timeIntervalSince1970)*1000
                 
                 let params: [String: Any] = [
                     "user_id": userId,
