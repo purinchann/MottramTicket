@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mottram_logo" translatesAutoresizingMaskIntoConstraints="NO" id="i7S-9s-9mi">
+                                <rect key="frame" x="117" y="358" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="KeO-qa-XUD"/>
+                                    <constraint firstAttribute="height" constant="180" id="XnL-mt-AGp"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i7S-9s-9mi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="URs-Jd-Vtm"/>
+                            <constraint firstItem="i7S-9s-9mi" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="riV-NU-RPb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +39,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mottram_logo" width="482" height="344"/>
+    </resources>
 </document>
