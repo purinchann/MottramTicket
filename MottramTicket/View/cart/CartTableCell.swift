@@ -10,6 +10,7 @@ import UIKit
 
 class CartTableCell: UITableViewCell {
     
+    @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemSizeLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
@@ -27,5 +28,7 @@ class CartTableCell: UITableViewCell {
         itemSizeLabel.text = "\(cart.size ?? "")サイズ"
         itemPriceLabel.text = "\(cart.price ?? 0)円"
         createTimeLabel.text = Date().elapsedTimeStr(unixtime: Int(cart.createdAt ?? 0))
+        
+        itemImageView.loadImage(urlString: cart.imageUrl, withLoadingImage: true, completion: { _, _ in})
     }
 }

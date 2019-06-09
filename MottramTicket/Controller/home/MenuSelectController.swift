@@ -122,7 +122,8 @@ class MenuSelectController: UIViewController {
                 "created_at": timestamp,
                 "menu_id": menu.id ?? "",
                 "shop_id": _shop.id ?? "",
-                "is_order": false
+                "is_order": false,
+                "image_url": menu.imageUrl ?? ""
             ]
             repository.createCart(params: params)
         } else {
@@ -140,7 +141,8 @@ class MenuSelectController: UIViewController {
                     "created_at": timestamp,
                     "menu_id": menu.id ?? "",
                     "shop_id": _shop.id ?? "",
-                    "is_order": false
+                    "is_order": false,
+                    "image_url": menu.imageUrl ?? ""
                 ]
                 self.repository.createCart(params: params)
                 }, onError: { [weak self] _ in

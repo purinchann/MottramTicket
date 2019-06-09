@@ -89,7 +89,8 @@ class CartRepository {
             "shop_id": cart.shopId ?? "",
             "paid_user_id": "",
             "buyer_id": "",
-            "delivered_user_id": ""
+            "delivered_user_id": "",
+            "image_url": cart.imageUrl ?? ""
         ]
         
         if  0 < cnt {

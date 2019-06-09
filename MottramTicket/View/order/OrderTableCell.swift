@@ -10,6 +10,7 @@ import UIKit
 
 class OrderTableCell: UITableViewCell {
     
+    @IBOutlet weak var orderImageView: UIImageView!
     @IBOutlet weak var orderNameLabel: UILabel!
     @IBOutlet weak var orderSizeLabel: UILabel!
     @IBOutlet weak var orderPriceLabel: UILabel!
@@ -29,6 +30,8 @@ class OrderTableCell: UITableViewCell {
         orderSizeLabel.text = "\(order.size ?? "") サイズ"
         orderPriceLabel.text = "\(order.price ?? 0) 円"
         orderCreateTimeLabel.text = "\(Date().elapsedTimeStr(unixtime: Int(order.updatedAt ?? 0)))"
+        
+        orderImageView.loadImage(urlString: order.imageUrl, withLoadingImage: true, completion: { _, _ in})
         
         if (order.isComplete ?? false) {
             self.orderNameLabel.textColor = #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1)

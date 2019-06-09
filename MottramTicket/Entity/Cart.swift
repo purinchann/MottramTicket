@@ -18,6 +18,7 @@ struct Cart {
     var menuId: String?
     var shopId: String?
     var isOrder: Bool?
+    var imageUrl: String?
     
     init(dic: [String: Any]) {
         self.id = dic["id"] as? String
@@ -29,5 +30,6 @@ struct Cart {
         self.menuId = dic["menu_id"] as? String
         self.shopId = dic["shop_id"] as? String
         self.isOrder = dic["is_order"] as? Bool
+        self.imageUrl = dic["image_url"] as? String
     }
 }

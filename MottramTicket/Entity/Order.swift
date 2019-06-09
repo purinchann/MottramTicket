@@ -25,6 +25,7 @@ struct Order {
     var orderTime: String?
     var menuId: String?
     var shopId: String?
+    var imageUrl: String?
     
     init(dic: [String: Any]) {
         self.id = dic["id"] as? String
@@ -43,5 +44,6 @@ struct Order {
         self.orderTime = dic["order_time"] as? String
         self.menuId = dic["menu_id"] as? String
         self.shopId = dic["shop_id"] as? String
+        self.imageUrl = dic["image_url"] as? String
     }
 }
