@@ -36,6 +36,8 @@
 		5D1DE1A622A6FC5D0024F139 /* RenewalScanController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1DE1A522A6FC5D0024F139 /* RenewalScanController.storyboard */; };
 		5D1DE1A822A6FC710024F139 /* PurchaseController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1DE1A722A6FC710024F139 /* PurchaseController.storyboard */; };
 		5D1DE1AC22A7057E0024F139 /* PurchaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DE1AB22A7057E0024F139 /* PurchaseRepository.swift */; };
+		5D24DB2122AC8A6E008C2783 /* MapController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D24DB2022AC8A6E008C2783 /* MapController.storyboard */; };
+		5D24DB2322AC8A91008C2783 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24DB2222AC8A91008C2783 /* MapController.swift */; };
 		5D2A6C5222A8ABCE00C7BA84 /* MessageController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2A6C5122A8ABCE00C7BA84 /* MessageController.storyboard */; };
 		5D2A6C5422A8AC1100C7BA84 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A6C5322A8AC1100C7BA84 /* MessageController.swift */; };
 		5D2A6C5722A8AD2300C7BA84 /* MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A6C5622A8AD2300C7BA84 /* MessageRepository.swift */; };
@@ -140,6 +142,8 @@
 		5D1DE1A522A6FC5D0024F139 /* RenewalScanController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RenewalScanController.storyboard; sourceTree = "<group>"; };
 		5D1DE1A722A6FC710024F139 /* PurchaseController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseController.storyboard; sourceTree = "<group>"; };
 		5D1DE1AB22A7057E0024F139 /* PurchaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseRepository.swift; sourceTree = "<group>"; };
+		5D24DB2022AC8A6E008C2783 /* MapController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapController.storyboard; sourceTree = "<group>"; };
+		5D24DB2222AC8A91008C2783 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		5D2A6C5122A8ABCE00C7BA84 /* MessageController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageController.storyboard; sourceTree = "<group>"; };
 		5D2A6C5322A8AC1100C7BA84 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		5D2A6C5622A8AD2300C7BA84 /* MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepository.swift; sourceTree = "<group>"; };
@@ -341,6 +345,14 @@
 				5D1DE1AB22A7057E0024F139 /* PurchaseRepository.swift */,
 			);
 			path = purchase;
+			sourceTree = "<group>";
+		};
+		5D24DB1F22AC8A57008C2783 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				5D24DB2022AC8A6E008C2783 /* MapController.storyboard */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 		5D2A6C4F22A8ABAE00C7BA84 /* message */ = {
@@ -661,6 +673,7 @@
 		5D6D54E9229C288F00D15A24 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				5D24DB1F22AC8A57008C2783 /* common */,
 				5D2A6C5B22A8B6A400C7BA84 /* setting */,
 				5D2A6C4F22A8ABAE00C7BA84 /* message */,
 				5D520DC322A85D8200847B66 /* ad */,
@@ -720,6 +733,7 @@
 			isa = PBXGroup;
 			children = (
 				5DDE03E822A9CC8E00AC4E4D /* SetConnectController.swift */,
+				5D24DB2222AC8A91008C2783 /* MapController.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -813,6 +827,7 @@
 				5D695C9322A53AC20091AC7C /* MenuSelectSizeCell.xib in Resources */,
 				5D45E23322A39A440019D89C /* CartController.storyboard in Resources */,
 				5D1DE16A22A682C20024F139 /* MenuFocusView.xib in Resources */,
+				5D24DB2122AC8A6E008C2783 /* MapController.storyboard in Resources */,
 				5D45E23122A39A2F0019D89C /* HomeController.storyboard in Resources */,
 				5D520DC522A85D9B00847B66 /* AdController.storyboard in Resources */,
 				5D1DE1A622A6FC5D0024F139 /* RenewalScanController.storyboard in Resources */,
@@ -854,12 +869,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MottramTicket/Pods-MottramTicket-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -962,6 +981,7 @@
 				5D2A6C6022A8B6F000C7BA84 /* SettingController.swift in Sources */,
 				5D1DE18E22A6B76A0024F139 /* OrderRepository.swift in Sources */,
 				5D2A6C5A22A8B05600C7BA84 /* MessageCell.swift in Sources */,
+				5D24DB2322AC8A91008C2783 /* MapController.swift in Sources */,
 				5D6D54D5229C0A5E00D15A24 /* ViewController.swift in Sources */,
 				5D45E23822A39A7F0019D89C /* HomeController.swift in Sources */,
 				5D45E21522A34C8C0019D89C /* Array+Ext.swift in Sources */,

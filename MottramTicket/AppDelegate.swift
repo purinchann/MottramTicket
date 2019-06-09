@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import RxSwift
+import GoogleMaps
 
 enum AppError: Error {
     case noError
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var disposeBag = DisposeBag()
     var rootName = "FirstController"
+    let googleMapApiKey: String = "AIzaSyAuRdSW09bvcliHfPMr2mGkoAJVE2_bCKI"
     
     var googleAuthInfo = Variable<(withIDToken: String, accessToken: String, email: String)>((withIDToken: "", accessToken: "", email: ""))
 
@@ -33,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        GMSServices.provideAPIKey(googleMapApiKey)
         //autoLogin()
         return true
     }

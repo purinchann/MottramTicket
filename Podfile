@@ -12,6 +12,8 @@ def install_pod
   pod 'RxCocoa'
   pod 'PagingKit'
   pod 'GoogleSignIn'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end
 
 target 'MottramTicket' do

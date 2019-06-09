@@ -20,6 +20,8 @@ struct Shop {
     var orderLimit: Int?
     var businessHours: String?
     var tel: String?
+    var latitude: String?
+    var longitude: String?
     
     init(dic: [String: Any]) {
         self.id = dic["id"] as? String
@@ -33,5 +35,7 @@ struct Shop {
         self.orderLimit = dic["order_limit"] as? Int
         self.businessHours = dic["business_hours"] as? String
         self.tel = dic["tel"] as? String
+        self.latitude = dic["latitude"] as? String
+        self.longitude = dic["longitude"] as? String
     }
 }
