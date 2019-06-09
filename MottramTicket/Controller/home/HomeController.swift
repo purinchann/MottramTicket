@@ -82,6 +82,20 @@ class HomeController: SetConnectController {
         }.disposed(by: disposeBag)
     }
     
+    
+    @IBAction func toMap(_ sender: UIButton) {
+        guard let latitudeStr = shop?.latitude,
+            let longitudeStr = shop?.longitude,
+            let latitude = Double(latitudeStr),
+            let longitude = Double(longitudeStr),
+            let vc = createController(storyboardName: "MapController") as? MapController else {
+                return
+        }
+        vc.lat = latitude
+        vc.lng = longitude
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func toCart(_ sender: UIButton) {
         
         if let tabvc = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController  {
