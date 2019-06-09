@@ -42,6 +42,7 @@ class PurchaseRepository {
             let messageTimeStr = Date().convertFormat("yyyyMMddHHmm")
             
             let messageParams: [String: Any] = [
+                "message_subject": "[モッチャムチケット] 受け取り報告です。",
                 "message_text": "ご注文いただいた\(orderName)を手に入れました。受け取りにお越しください。",
                 "user_id": customerId,
                 "is_watch": false,

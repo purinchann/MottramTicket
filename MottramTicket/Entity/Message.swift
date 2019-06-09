@@ -10,6 +10,7 @@ import Foundation
 
 struct Message {
     var id: String?
+    var messageSubject: String?
     var messageText: String?
     var messageMonth: String?
     var messageDate: String?
@@ -20,6 +21,7 @@ struct Message {
     
     init(dic: [String: Any]) {
         self.id = dic["id"] as? String
+        self.messageSubject = dic["message_subject"] as? String
         self.messageText = dic["message_text"] as? String
         self.messageMonth = dic["message_month"] as? String
         self.messageDate = dic["message_date"] as? String
