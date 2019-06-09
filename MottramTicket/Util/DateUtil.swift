@@ -16,4 +16,11 @@ class DateUtil {
         guard let date = dateFormatter.date(from: dateStr) else {return Date()}
         return date
     }
+    
+    func hmString(timeMinitsInt: Int?) -> String {
+        let timeMinits = timeMinitsInt ?? 0
+        let hours = timeMinits/60
+        let minits = timeMinits%60
+        return "\(hours)時間\(minits)分"
+    }
 }

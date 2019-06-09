@@ -51,7 +51,7 @@ class HomeHeaderView: UICollectionReusableView, UIGestureRecognizerDelegate {
     
     private func loadShop() {
         guard let _shop = shop else {return}
-        currentWaitTimeLabel.text = "\(_shop.currentWaitTime ?? 0)分"
+        currentWaitTimeLabel.text = "\(DateUtil().hmString(timeMinitsInt: _shop.currentWaitTime)) 待ち"
         feeLabel.text = "\(_shop.fee ?? 500)円"
     }
 }
