@@ -77,13 +77,13 @@ class SettingController: UITableViewController {
         }
         switch row {
         case 0:
-            vc.urlString = "LPのリンク"
+            vc.urlString = "https://mottram100ticket.netlify.com/"
         case 1:
-            vc.urlString = "プライバシーポリシーのリンク"
+            vc.urlString = "https://mottram100ticket.netlify.com/privacypolicy.html"
         case 2:
-            vc.urlString = "利用規約のリンク"
+            vc.urlString = "https://mottram100ticket.netlify.com/tos.html"
         case 3:
-            vc.urlString = "お問い合わせのリンク"
+            vc.urlString = "https://mottram100ticket.netlify.com/contact.html"
         default:
             return
         }
