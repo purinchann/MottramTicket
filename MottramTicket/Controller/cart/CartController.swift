@@ -140,12 +140,20 @@ extension CartController: CartTableFooterDelegate {
     
     func createOrderAction() {
         
+        guard let businessHours = shop?.businessHours else {
+            return
+        }
+        
+        let startAndEnds = businessHours.components(separatedBy: "〜")
+        guard let startStr = startAndEnds.atIndex(0),
+            let endStr = startAndEnds.atIndex(1) else {return}
+        
         if cartList.isEmpty {
             toast(message: "カートに商品がありません", callback: {})
             return
         }
         
-        if !Date().isInBusinessHours() {
+        if !Date().isInBusinessHours(startStr: "\(startStr):00", endStr: "\(endStr):00") {
             toast(message: "注文を受け付けている時間帯は午前11時〜午後18時までです", callback: {})
             return
         }

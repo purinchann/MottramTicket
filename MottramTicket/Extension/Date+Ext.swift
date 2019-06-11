@@ -35,12 +35,10 @@ extension Date {
         return outputString.replacingOccurrences(of: "-", with: "")
     }
     
-    func isInBusinessHours() -> Bool {
+    func isInBusinessHours(startStr: String, endStr: String) -> Bool {
         
         let nowStr = self.convertFormat("HH:mm:ss")
-        let start = "11:00:00"
-        let end = "18:00:00"
-        if start <= nowStr && nowStr <= end {
+        if startStr <= nowStr && nowStr <= endStr {
             return true
         } else {
             return false
