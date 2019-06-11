@@ -154,7 +154,7 @@ extension CartController: CartTableFooterDelegate {
         }
         
         if !Date().isInBusinessHours(startStr: "\(startStr):00", endStr: "\(endStr):00") {
-            toast(message: "注文を受け付けている時間帯は午前11時〜午後18時までです", callback: {})
+            toast(message: "注文を受け付けている時間帯は午前\(startStr)〜午後\(endStr)までです", callback: {})
             return
         }
         
