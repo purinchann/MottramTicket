@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
         GMSServices.provideAPIKey(googleMapApiKey)
-        //autoLogin()
+        
+        autoLogin()
         return true
     }
 
