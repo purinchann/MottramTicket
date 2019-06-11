@@ -170,11 +170,11 @@ enum OrderStatusType: Int {
             return nil
         }
         let timestamp = Int(Date().timeIntervalSince1970)*1000
-        let orderTimeStr = Date().convertFormat("yyyyMMddHHmm")
+        let orderDateStr = Date().convertFormat("yyyyMMdd")
         switch self {
         case .notPaid:
             let params: [String: Any] = [
-                "order_time": orderTimeStr,
+                "order_date": orderDateStr,
                 "is_paid": true,
                 "updated_at": timestamp,
                 "paid_user_id": userId
