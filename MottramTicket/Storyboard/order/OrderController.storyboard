@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6fb-Lu-kKz">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="fJT-N7-xmS">
+            <objects>
+                <navigationController storyboardIdentifier="OrderController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6fb-Lu-kKz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LSZ-4r-O9A">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fp1-q9-qx9" kind="relationship" relationship="rootViewController" id="IRz-uN-go3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ItK-lA-D4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4868" y="-1775"/>
+        </scene>
+        <!--Order Controller-->
+        <scene sceneID="Pvm-eN-v9z">
+            <objects>
+                <viewController id="fp1-q9-qx9" customClass="OrderController" customModule="MottramTicket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0JK-Or-vDe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5B-LI-TfL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="vgv-Ox-5F3"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="V1B-yk-whc" kind="embed" id="7lA-46-reR"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8EK-9Z-OTu">
+                                <rect key="frame" x="0.0" y="158" width="414" height="738"/>
+                                <connections>
+                                    <segue destination="h3r-Q6-YkY" kind="embed" id="Yww-vU-Fke"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8EK-9Z-OTu" firstAttribute="leading" secondItem="0JK-Or-vDe" secondAttribute="leading" id="7Zg-Sv-9nl"/>
+                            <constraint firstItem="eDa-jf-Yx7" firstAttribute="trailing" secondItem="s5B-LI-TfL" secondAttribute="trailing" id="FdA-Er-wm3"/>
+                            <constraint firstItem="s5B-LI-TfL" firstAttribute="top" secondItem="eDa-jf-Yx7" secondAttribute="top" id="IQn-7l-WMy"/>
+                            <constraint firstAttribute="bottom" secondItem="8EK-9Z-OTu" secondAttribute="bottom" id="cGm-cz-ALS"/>
+                            <constraint firstAttribute="trailing" secondItem="8EK-9Z-OTu" secondAttribute="trailing" id="dB8-yT-l1s"/>
+                            <constraint firstItem="8EK-9Z-OTu" firstAttribute="top" secondItem="s5B-LI-TfL" secondAttribute="bottom" id="fdi-fZ-QgA"/>
+                            <constraint firstItem="s5B-LI-TfL" firstAttribute="leading" secondItem="eDa-jf-Yx7" secondAttribute="leading" id="m4s-kW-fCh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eDa-jf-Yx7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xci-z8-JFo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYv-CK-aXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3906" y="-1775"/>
+        </scene>
+        <!--Paging Menu View Controller-->
+        <scene sceneID="8eE-v9-MZW">
+            <objects>
+                <viewController id="V1B-yk-whc" customClass="PagingMenuViewController" customModule="PagingKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8T5-Hi-nIk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tA4-sh-n1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3136" y="-2052"/>
+        </scene>
+        <!--Paging Content View Controller-->
+        <scene sceneID="c6x-fo-CaA">
+            <objects>
+                <viewController id="h3r-Q6-YkY" customClass="PagingContentViewController" customModule="PagingKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J2M-fa-5PS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Slh-1o-1ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3136" y="-1722"/>
+        </scene>
+    </scenes>
+</document>

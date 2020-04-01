@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ik-x4-5Ws">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Order No Paid Controller-->
+        <scene sceneID="aXb-j2-vSU">
+            <objects>
+                <viewController storyboardIdentifier="OrderNoPaidController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2ik-x4-5Ws" customClass="OrderNoPaidController" customModule="MottramTicket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eCf-3m-KwY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※1 未支払いの注文です。お支払いが完了次第、スタッフがあなたの代わりにタピオカを受け取ります。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psq-y8-42b">
+                                <rect key="frame" x="16" y="44" width="382" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="yaG-4E-xHa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※2 注文リストをタップしたらQRコードが表示されるはずなので、スタッフに見せてお支払いください。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-fd-kQi">
+                                <rect key="frame" x="16" y="114" width="382" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ien-wC-l2n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjust" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GAC-ls-sio">
+                                <rect key="frame" x="0.0" y="184" width="414" height="678"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Sk-fd-kQi" firstAttribute="leading" secondItem="Hvb-pK-juf" secondAttribute="leading" constant="16" id="6Ky-Pp-5J5"/>
+                            <constraint firstItem="Psq-y8-42b" firstAttribute="top" secondItem="Hvb-pK-juf" secondAttribute="top" id="Dad-XX-0ud"/>
+                            <constraint firstItem="0Sk-fd-kQi" firstAttribute="top" secondItem="Psq-y8-42b" secondAttribute="bottom" id="IjV-K9-vau"/>
+                            <constraint firstItem="Psq-y8-42b" firstAttribute="leading" secondItem="Hvb-pK-juf" secondAttribute="leading" constant="16" id="KkH-7U-AJu"/>
+                            <constraint firstItem="Hvb-pK-juf" firstAttribute="trailing" secondItem="GAC-ls-sio" secondAttribute="trailing" id="RKU-07-EFO"/>
+                            <constraint firstItem="GAC-ls-sio" firstAttribute="leading" secondItem="Hvb-pK-juf" secondAttribute="leading" id="at1-EX-x54"/>
+                            <constraint firstItem="Hvb-pK-juf" firstAttribute="trailing" secondItem="0Sk-fd-kQi" secondAttribute="trailing" constant="16" id="jA2-IH-9nN"/>
+                            <constraint firstItem="Hvb-pK-juf" firstAttribute="bottom" secondItem="GAC-ls-sio" secondAttribute="bottom" id="rd0-dZ-TDq"/>
+                            <constraint firstItem="Hvb-pK-juf" firstAttribute="trailing" secondItem="Psq-y8-42b" secondAttribute="trailing" constant="16" id="uLR-HL-VKc"/>
+                            <constraint firstItem="GAC-ls-sio" firstAttribute="top" secondItem="0Sk-fd-kQi" secondAttribute="bottom" id="yeN-uh-Z20"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hvb-pK-juf"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="GAC-ls-sio" id="36T-1u-HrS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rHS-qf-n1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+</document>
